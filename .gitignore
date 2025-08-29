@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Data - We want DVC to handle this
+/data/raw/
+/data/processed/
+/data/featured/
+/data/model/
+
+# DVC
+.dvc/cache
+dvc_storage/
+
+# Other
+.DS_Store

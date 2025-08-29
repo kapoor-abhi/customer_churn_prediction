@@ -1,0 +1,34 @@
+# Expected schemas for raw data files
+train_v2.csv:
+  msno: object
+  is_churn: int64
+
+members_v3.csv:
+  msno: object
+  city: int64
+  bd: int64
+  gender: object
+  registered_via: int64
+  registration_init_time: int64
+
+transactions_v2.csv:
+  msno: object
+  payment_method_id: int64
+  payment_plan_days: int64
+  plan_list_price: int64
+  actual_amount_paid: int64
+  is_auto_renew: int64
+  transaction_date: int64
+  membership_expire_date: int64
+  is_cancel: int64
+
+user_logs_v2.csv:
+  msno: object
+  date: int64
+  num_25: int64
+  num_50: int64
+  num_75: int64
+  num_985: int64
+  num_100: int64
+  num_unq: int64
+  total_secs: float64
