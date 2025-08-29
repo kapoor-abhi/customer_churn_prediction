@@ -1,0 +1,41 @@
+schema: '2.0'
+stages:
+  validate_data:
+    cmd: python src/components/data_validation.py --config config/config.yaml --schema
+      config/schema.yaml
+    deps:
+    - path: config/schema.yaml
+      hash: md5
+      md5: 9cf41ceac3641182d6969f7938717e11
+      size: 628
+    - path: data/raw
+      hash: md5
+      md5: 3214f62dee8a9160aca9a24cf1468bbc.dir
+      size: 2020416812
+      nfiles: 4
+    - path: src/components/data_validation.py
+      hash: md5
+      md5: 4d534188c58b74cd5ff9bd85742c68fd
+      size: 2591
+  data_ingestion:
+    cmd: python src/components/data_ingestion.py --config config/config.yaml
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 0406b419c321a021fb55196e8319468a
+      size: 211
+    - path: data/raw
+      hash: md5
+      md5: 3214f62dee8a9160aca9a24cf1468bbc.dir
+      size: 2020416812
+      nfiles: 4
+    - path: src/components/data_ingestion.py
+      hash: md5
+      md5: ed5f82fc8d2595c65a395e609746f302
+      size: 3656
+    outs:
+    - path: data/processed
+      hash: md5
+      md5: ca6d271a540b6d3613dd7316c8269ef2.dir
+      size: 1583189255
+      nfiles: 25

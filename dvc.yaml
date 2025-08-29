@@ -1,0 +1,16 @@
+stages:
+  validate_data:
+    cmd: python src/components/data_validation.py --config config/config.yaml --schema config/schema.yaml
+    deps:
+      - src/components/data_validation.py
+      - config/schema.yaml
+      - data/raw
+
+  data_ingestion:
+    cmd: python src/components/data_ingestion.py --config config/config.yaml
+    deps:
+      - src/components/data_ingestion.py
+      - config/config.yaml
+      - data/raw
+    outs:
+      - data/processed
